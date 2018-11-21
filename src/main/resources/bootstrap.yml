@@ -1,0 +1,39 @@
+spring:
+  cloud:
+      inetutils:
+          ignoredInterfaces:
+            - docker0
+            - veth.*
+      consul:
+          host: 35.234.13.166
+          discovery:
+            healthCheckPath: ${management.server.servlet.context-path}/actuator/health
+            healthCheckInterval: 15s #服务中心健康检查间隔
+            preferIpAddress: true  #使用外部IP注册服务，默认使用的是主机名
+            health-check-critical-timeout: 5m #5分钟没有恢复服务的从服务注册中心移除
+            instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+            acl-token: 8f0a2e69-0906-a42f-33f3-de1d9300b851
+          config:
+            prefix: config
+            defaultContext: userMicroService
+            profileSeparator: ','
+            format: PROPERTIES
+            acl-token: 8f0a2e69-0906-a42f-33f3-de1d9300b851
+#eureka:
+#  client:
+#    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    servlet:
+      context-path: /
+    ssl:
+      enabled: false
+    port: 9100
+  endpoint:
+    health:
+      show-details: always

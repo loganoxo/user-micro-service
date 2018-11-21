@@ -1,0 +1,37 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/user-micro-service-spi/target/
+/logs/
+!/logs/
+/logs/main.log
+src/main/java/com/zhiyou/taoge/annotation/
+src/main/java/com/zhiyou/taoge/common/aop/
+src/main/java/com/zhiyou/taoge/config/
+src/main/java/com/zhiyou/taoge/constant/
+src/main/java/com/zhiyou/taoge/controller/
+src/main/java/com/zhiyou/taoge/dao/
+src/main/java/com/zhiyou/taoge/service/
+user-micro-service-spi/src/main/java/com/zhiyou/taoge/feign/
